@@ -8,8 +8,7 @@ public class EventBusTest {
     @Test
     public void name() throws InterruptedException {
         EventBus eventBus = new EventBus();
-        Boy boy = new Boy();
-        eventBus.register(boy);
+        new Boy(eventBus);
 
         new Girl(eventBus);
 

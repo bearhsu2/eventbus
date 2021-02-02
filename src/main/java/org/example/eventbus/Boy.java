@@ -1,10 +1,16 @@
 package org.example.eventbus;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 public class Boy {
 
-    public Boy() {}
+    private EventBus eventBus;
+
+    public Boy(EventBus eventBus) {
+        this.eventBus = eventBus;
+        this.eventBus.register(this);
+    }
 
     @Subscribe
     public void onGirlReady(GirlReadyEvent event) {
